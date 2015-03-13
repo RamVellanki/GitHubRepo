@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Demo 2</title>
+    <script>
+        /*Unlike SVG, <canvas> only supports pimitive shape, which is rectangles. All other shapes must be created combining one or more paths.*/
+        function draw() {
+            var i = 0;
+            var j = 255;
+
+            //1) Get the canvas
+            var canvas = document.getElementById("canvas");
+            //2) Get the context
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+                var canvW = canvas.width;
+                var canvH = canvas.height;
+                //for (i = 0; i <= canvH || i <= canvW; i += 5) {
+                setInterval(sketchRect, 100);
+                //}
+            }
+
+            function sketchRect() {
+                i += 5;
+                j -= 5;
+                ctx.strokeStyle = 'rgb(' + (j) + ',' + (j - 5) + ',' + (j - 6) + ')';
+                ctx.strokeRect(i, i, canvW - (i * 2), canvH - (i * 2));
+                if (j == 0)
+                    canvas.width = canvas.width;
+            }
+        }
+        
+        function replay(){
+            draw();
+        }
+    </script>
+</head>
+
+<body onload="draw();">
+    <!-- Start your code here -->
+
+    <header>
+        <h1 class="lw">Using Canvas and fill Rec Shapes</h1>
+    </header>
+    <canvas id="canvas" height="250" width="250" style="border: 0px solid blue">Browser doesn't support Canvas</canvas>
+    <div>
+        <input type="button" id="Replay" value="Replay" onclick="replay();">
+    </div>
+    <!-- End your code here -->
+</body>
