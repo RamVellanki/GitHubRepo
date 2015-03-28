@@ -1,0 +1,91 @@
+//Taking static HTML page and Bootstrap to Angular JS application
+//Go to Angularjs.org and get the CDN and add it to html
+
+Angular helps organize JS
+Angular helps create responsive (as in fast) websites.
+Angular plays well with jQuery
+Angular is easy to test.
+
+Def:
+A client-side JS for adding interactivity to HTML. And this happens using Angular directives.
+
+Ex:
+<!Doctype html>
+<html>
+	<body>
+	</body>
+<html>
+
+JS:
+function Store(){
+	alert("Welcome!!!");
+}
+
+Now we can add angular directive in HTML so that it calls the function Store().
+
+So directives are the ones that we can use to bind HTML and JS together.
+------------------
+Modules:
+-> These are the pieces where we write our code.
+-> These make our code more maintainable, testable and readable.
+-> This is where we define dependencies of our app.
+var app = angular.module('store',[]);//This array contains the dependencies.
+
+Expressions:
+I am {{4 + 6 }} => I am 10
+{{"Hello" + "you"}} => Hello you
+ng-app in HTML creates an angular application by running the module when the document loads. And since the HTML runs in angular app, we can use expressions in HTML.
+-------------------
+Working with data:
+let's say we have JS Object and want to print to the page. To do this, we need to use a controller.
+Controllers are where we define our app's behavior by defining functions and values.
+
+
+Gist of things learned:
+Directives - HTML annotations that trigger Javascript behaviors.
+Modules - Where our application components live.
+Controllers - Where we add application behavior
+Expressions - How values get displayed within the page.
+
+
+LEVEL 2:
+---------------------
+ng-app : This is how we attach Application module to the page.
+ng-controller : This is how we attach Controller function to the page.
+ng-show/ng-hide: Display a section based on expression.
+ng-repeat: Repeat a section for each item in an Array.
+
+Formatting with filters:
+Formatting date with filter:
+-->{{'1388123412323' | date:'MM/dd/yyy @ h:mma'}}
+-----> The pipe ( | ) is used to specify the filter.
+Upper case or lower case:
+| uppercase or | lowercase
+
+Limt-to:
+| limitTo: 8 (this can be used with ng-repeat as well)
+
+Order By: (Sortying)
+| orderBy:'-price'
+
+If we want to use expressions in "src" of image it won't work. Because browser first tries to load the image before the expression is evaluated. So we have to use ng-src.
+Ex: <img ng-src={{product.images[0]}} />
+
+product.images[0] contains the image source.
+
+ng-hide based on if array has values or not:
+ <div class="gallery" ng-show={{!product.images.length}}>
+ 
+-------------------------------------
+Adding tabs:
+Twitter bootstrap comes with easy ways to add tabs:
+<section>
+	<ul class="nav nav-pills">
+		<li><a href>Description</a> </li>
+		<li><a href>Specifications</a> </li>
+		<li><a href>Reviews</a> </li>
+	</ul>
+</section>
+
+But how do we add behavior to this using Angular?
+

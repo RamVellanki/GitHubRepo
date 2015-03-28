@@ -1,0 +1,33 @@
+<!Doctype html>
+<html ng-app="store">
+<!--ng-app says Run this module. Also indicates the HTML is an angular app -->
+
+<head>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Vanilla-Todo</title>
+</head>
+
+<body>
+	<div class="container">
+		<h2 class="title text-center">Todo</h2>
+		<div class="entrysection">
+			<input class="form-control todoentry" placeholder="Enter your todo" type="text" id="intodo">
+		</div>
+		</br>
+		<div class="well" style="max-height: 300px;overflow: auto;">
+			<ul id="check-list-box" class="list-group checked-list-box">
+				<li class="list-group-item"><span class="glyphicon glyphicon-ok"></span> Task item 1</li>
+				<li class="list-group-item" data-color="success">Task item 2</li>
+				<li class="list-group-item" data-color="info">Task item 3</li>
+				<li class="list-group-item" data-color="warning">Task item 4</li>
+				<li class="list-group-item" data-color="danger">Task item 5</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</html>

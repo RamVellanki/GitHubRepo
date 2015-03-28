@@ -1,0 +1,35 @@
+STEP 1:
+Will start with simple module as shown below:
+var app = angular.module('store',[]); //the store is the module that we have to spcify in HTML
+<html ng-app='store'> ==> This indicates that the entire app (HTML document) is now a part of Angular app and allows us to use angular dirs.
+Wrap entire app in a closure, its a good habit. Like:
+	(function(){
+		var app = angular.module('store',[]);
+		})();
+
+
+STEP 2: Adding Controller
+The controller can be added using 
+	app.controller('StoreController',function(){});
+The controller name should start with CAPS
+The 2nd Parameter is an anonymous function.
+Inside the function we should set properties.
+For example, lets the app, has an object and we want to display that object in HTML using controller. Then inside the anonymous function of controller, we create a new property and assign the object to that property.
+Displaying the data in HTML:-
+1. Decide the scope of the controller. Depending on where you specify the controller in HTML, the scope would be determined. For example, if you specify the controller in <div> then the scope is just limited to that <div>. But if you specify at <body> then it is available for the entire <body>
+<body ng-controller"StoreController as store"> ==> the 'store' is an alias name.
+<p>{{store.property.value}}</p> ==> The property is the value that we set in the controller anonymous function. The value is the property of the object.
+
+
+STEP 3: ng-show, ng-repeat
+We can use ng-repeat and ng-show/hide as shown below:
+	<div ng-repeat="product in store.products">
+		<!--			Template for displaying the product-->
+		<div ng-hide="product.soldOut">
+			<h1> {{product.name}} </h1>
+			<h2> ${{product.price}}</h2>
+			<p>{{product.description}}</p>
+			<button ng-show="product.canPurchase">Add to cart</button>
+		</div>
+	</div>
+As shown above, let's say we have an array "gems" and it is assigned to a controller property (here our controller is "store" defined using alias name) called "products". Now we can access a property of product using store.products[0].name, but if want to repeat something on this array we can use ng-repeat. ng-show/hide is self explanatory.

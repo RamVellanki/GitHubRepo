@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotations - My ASP.NET Application</title>
+    <link href="/Content/css?v=2u5LKcSaCi90PbGcTLOCZjmI6FJYkd-iZ6yTtwYVU8E1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    <script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+
+    
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Serendipity Tours &amp; Travels</a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/Support">
+                            <span class="glyphicon glyphicon-phone-alt"></span>
+                        </a>
+                    </li>
+                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/Account/Login" id="loginLink">Log in</a></li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        
+                
+
+
+<div class="row">
+    <div class="col-md-1">
+        
+<div id="sidebar-wrapper">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Maintenance Options<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body maintenance-body">
+                    <a href="/Quotations/Create">Create New</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Bookings</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Packages</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        Search Options<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in">
+                <div class="panel-body maintenance-body">
+                    <a href="#">Enquiries</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Quotations</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Flights</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Hotels</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Cabs</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Cruise</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        Reports<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse in">
+                <div class="panel-body maintenance-body">
+                    <a href="#">Daily Enquiries</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Daily Quotations</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Daily Customer Reports</a>
+                </div>
+                <div class="panel-body maintenance-body">
+                    <a href="#">Daily Financial Reports</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    </div>
+    <div class="col-lg-11">
+        
+
+
+<h2>Add new Quotation</h2>
+<ol class="breadcrumb">
+    <li id="CustomerBread"><a href="#">Customer</a></li>
+    <li id="EnquiryBread"><a href="/Quotations/Enquiry">Enquiry</a></li>
+    <li id="QuotationsBread" class="active">Quotations</a></li>
+    <li id="BookingsBread"><a href="#">Bookings</a></li>
+    <li id="PaymentBread"><a href="#">Payment</a></li>
+</ol>
+<form action="/Quotations/Create" method="post"><input name="__RequestVerificationToken" type="hidden" value="_dgIUkFqD-TSGmb_HS5sJRvXW1gHDlNKkh-x6Fo1rGGP9TDNS_TFtnfW_8kx-Hz4z8WkfQH9tia9HXVwefQpNJXWImIO2Ff8pVpWuMISBMM1" />    <div id="flightModal">
+    </div>
+    <div class="container">
+        <form>
+            
+
+            
+
+            <div class="container">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <small> <label class="control-label" for="EnquiryMasterId">Enquiry Id</label></small>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 input-sm">
+
+                            <input class="textbox text-box single-line" data-val="true" data-val-number="The field Enquiry Id must be a number." data-val-required="The Enquiry Id field is required." id="EnquiryMasterId" name="EnquiryMasterId" type="number" value="0" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="EnquiryMasterId" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <small> <label class="control-label" for="EmployeeMasterId">Employee Id</label></small>
+                        </div>
+                        <div class="col-sm-4 col-md-3 col-lg-2 input-sm col-xs-3">
+                            <input class="textbox text-box single-line" data-val="true" data-val-number="The field Quotation Generated By must be a number." data-val-required="The Quotation Generated By field is required." id="EmployeeMasterId" name="EmployeeMasterId" readonly="true" type="number" value="0" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="EmployeeMasterId" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-sm-2 col-md-3 col-lg-2 hidden-xs">
+                            <small> </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <small> <label class="control-label" for="CustomerRefId">Customer Reference#</label></small>
+                        </div>
+                        <div class="col-sm-4 col-md-3 col-lg-2 input-sm col-xs-3">
+                            <input class="textbox text-box single-line" data-val="true" data-val-number="The field Customer Reference# must be a number." data-val-required="The Customer Reference# field is required." id="CustomerRefId" name="CustomerRefId" readonly="true" type="number" value="0" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="CustomerRefId" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-sm-2 col-md-3 col-lg-2 hidden-xs">
+                            <small> </small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr />
+            
+            <br />
+            <div class="row">
+                
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Enquiry Type</th>
+                                <th>Minimum Cost</th>
+                                <th>Quoted Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div id="QuotationsFlight"><a href="/Quotations/QuotationsFlight">Flights</a></div></td>
+                                <td></td>
+                                <td></td>
+                                
+                                <td>
+                                    
+                                    <input type="button" value="Create" id="createFlight" />
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <a href="#">Hotels</a></td>
+                                <td><input class="form-control HotelMinimumCost text-box single-line" data-val="true" data-val-number="The field Hotel Minimum Cost must be a number." id="HotelMinimumCost" name="HotelMinimumCost" type="text" value="" /></td>
+                                <td><input class="form-control HotelQuotedPrice text-box single-line" data-val="true" data-val-number="The field Hotel Quoted Price must be a number." id="HotelQuotedPrice" name="HotelQuotedPrice" type="text" value="" /></td>
+                                <td><button class="hotelquotation">Add</button></td>
+                            </tr>
+                            <tr>
+                                <td> <a href="#">Cabs</a></td>
+                                <td><input class="form-control CabMinimumCost text-box single-line" data-val="true" data-val-number="The field Cab Minimum Cost must be a number." id="CabMinimumCost" name="CabMinimumCost" type="text" value="" /></td>
+                                <td><input class="form-control CabQuotedPrice text-box single-line" data-val="true" data-val-number="The field Cab Quoted Price must be a number." id="CabQuotedPrice" name="CabQuotedPrice" type="text" value="" /></td>
+                                <td><button class="cabquotation">Add</button></td>
+                            </tr>
+
+                            <tr>
+                                <td> <a href="#">Other</a></td>
+                                <td><input class="form-control OtherMinimumCost text-box single-line" data-val="true" data-val-number="The field Other Minimum Cost must be a number." id="OtherMinimumCost" name="OtherMinimumCost" type="text" value="" /></td>
+                                <td><input class="form-control OtherQuotedPrice text-box single-line" data-val="true" data-val-number="The field Other Quoted Price must be a number." id="OtherQuotedPrice" name="OtherQuotedPrice" type="text" value="" /></td>
+                                <td><button class="otherQuotation">Add</button></td>
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div class="row text-right">
+                    <div class="col-xs-2">
+                        <p>
+                            <strong>
+                                Total : <br>
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="col-xs-2 col-xs-offset-2">
+                        <strong>
+                            $1200.00 <br>
+                        </strong>
+                    </div>
+
+                    <div class="col-xs-2 col-xs-offset-2">
+                        <strong>
+                            $1250.00 <br>
+                        </strong>
+                    </div>
+
+                </div>
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                        <select class="form-control" id="CurrencyCode" name="CurrencyCode"></select>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CurrencyCode" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row top-space">
+                <div class="col-xs-12 form-inline">
+                    <input type="submit" value="Generate" class="btn btn-default" style="margin: auto" />
+                </div>
+            </div>
+        </form>
+    </div>
+</form>
+
+<div>
+    <a href="/Quotations">Back to List</a>
+</div>
+
+
+    </div>
+</div>
+
+
+    
+    <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+    <script type="text/javascript" src="/Content/scripts/Quotation.js"></script>
+
+
+
+
+
+            
+        </div>
+        <div id="footer" class="footer-text">
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="text-center"><h4>&copy; 2015 - Serendipity Tours & Travels</h4></div>
+            </nav>
+        </div>
+
+
+    <link href="/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"f05cef86961c4f0b9a165d58baa71b0e"}
+</script>
+<script type="text/javascript" src="http://localhost:52763/f85e919b0eb940328530db5a8ced332d/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>
