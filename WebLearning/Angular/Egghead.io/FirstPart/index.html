@@ -1,24 +1,39 @@
 <!Doctype html>
 <html ng-app="store">
-<!--ng-app says Run this module. Also indicates the HTML is an angular app -->
-
-<head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-</head>
-
-<body ng-controller="StoreController as store">
-	<div ng-repeat="product in store.products | orderBy: 'price'">
-		<!--			Template for displaying the product-->
-		<div ng-hide="product.soldOut'">
-			<h1> {{product.name}} </h1>
-			<h2> {{product.price | currency}}</h2>
-			<p>{{product.description}}</p>
-			<button ng-show="product.canPurchase">Add to cart</button>
-		</div>
-	</div>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
-</body>
-
+	<!--ng-app says Run this module. Also indicates the HTML is an angular app -->
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	</head>
+	<body ng-controller="StoreController as store">
+		<section ng-controller="PanelController as panel">
+			<ul class="nav nav-pills">
+				<li ng-class="{active: panel.isSelected(1)}">
+					<a href ng-click="panel.selectedTab(1)">Description</a>
+				</li>
+				<li ng-class="{active: panel.isSelected(2)}">
+					<a href ng-click="panel.selectedTab(2)">Specifications</a>
+				</li>
+				<li ng-class="{active: panel.isSelected(3)}">
+					<a href ng-click="panel.selectedTab(3)">Reviews</a>
+				</li>
+			</ul>
+			
+			<div>
+				<div class="panel" ng-show="panel.isSelected(1)">
+					<h4>Description</h4>
+					<p>{{store.products[0].description}}</p>
+				</div>
+				<div class="panel" ng-show="panel.isSelected(2)">
+					<h4>Specifications</h4>
+					<p>None yet</p>
+				</div>
+				<div class="panel" ng-show="panel.isSelected(3)">
+					<h4>Reviews</h4>
+					<p>None yet</p>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
 </html>

@@ -79,13 +79,12 @@ ng-hide based on if array has values or not:
 -------------------------------------
 Adding tabs:
 Twitter bootstrap comes with easy ways to add tabs:
-<section>
-	<ul class="nav nav-pills">
-		<li><a href>Description</a> </li>
-		<li><a href>Specifications</a> </li>
-		<li><a href>Reviews</a> </li>
-	</ul>
-</section>
+∂
 
 But how do we add behavior to this using Angular?
-
+> One way to do this in angular is by using directive ng-click as shown below and assigning a value to a tab.
+<li><a href ng-click="tab = 1">Description</a></li>
+<li><a href ng-click="tab = 2">Specifications</a></li>
+In order to print the value we can just say {{tab}}
+So, when we click on Tab item, the {{tab}} expression gets evaluated automatically.
+So this kind of expressions are binded in two ways.
