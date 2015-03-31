@@ -1,38 +1,44 @@
-(function () {
+(function todoApp() {
 
     //Create a modal, which contains an array to hold list of todos
     var modal = {
+        //Initialize data from localStorage
         init: function () {
-            this.todolist = [];
-            this.todolist = JSON.parse(localStorage.getItem("tododata"));
-            if (this.todolist === null)
-                this.todolist = [];
+            this.todolist = JSON.parse(localStorage.getItem("tododata")) || [];
         },
+        //Get all
         getTodoList: function () {
             return this.todolist;
         },
-        setTodoState: function (intodoid) {
+        //Change todo status
+        setTodoState: function (todoId) {
             //Set status
-            this.todolist[intodoid].status === "closed" ?
-                this.todolist[intodoid].status = "open" : this.todolist[intodoid].status = "closed";
-            localStorage.setItem("tododata", JSON.stringify(this.todolist));
+            this.todolist[todoId].status === "closed" ?
+                this.todolist[todoId].status = "open" : this.todolist[todoId].status = "closed";
+            this.updateLocalStorage();
         },
-        setNewTodo: function (inval) {
+        //Add new todo
+        setNewTodo: function (newTodo) {
             this.todolist.push({
                 id: this.todolist.length,
-                name: inval,
+                name: newTodo,
                 status: "open"
             });
-            localStorage.setItem("tododata", JSON.stringify(this.todolist));
-            this.myFirebaseRef.push({id: this.todolist.length, name: inval, status: "open"});
+            this.updateLocalStorage();
         },
+        //Clear all todo's
         clearall: function () {
             this.todolist = [];
+        },
+        //Update localstorage
+        updateLocalStorage: function(){
+            localStorage.setItem("tododata", JSON.stringify(this.todolist));
         }
     }
 
     //Create a View, which interacts with Controller and alters the display in HTML
     var view = {
+        //Initialize view
         init: function () {
             this.todolst = $('#todolistelm');
             this.todolst.html(' ');
@@ -43,6 +49,8 @@
                 view.render();
             });
         },
+
+        //Render view
         render: function () {
             var htmlStr = '';
             var clr = true;
