@@ -4,18 +4,7 @@
     var modal = {
         init: function () {
             this.todolist = [];
-            this.initialdataloaded = false;
-            this.myFirebaseRef = new Firebase("https://easydo.firebaseio.com/");
-            //Set firebase ref method
-            this.myFirebaseRef.on('child_added',function(snapshot){
-                snapshot.forEach(function(childsnapshot){
-                    var msg = childsnapshot.val();
-                    //var x = JSON.parse(msg);
-                    modal.todolist.push({id: msg.id, name: msg.name, status: msg.status});
-                });
-                modal.initialdataloaded = true;
-            });
-            //this.todolist = JSON.parse(localStorage.getItem("tododata"));
+            this.todolist = JSON.parse(localStorage.getItem("tododata"));
             if (this.todolist === null)
                 this.todolist = [];
         },
@@ -38,7 +27,6 @@
                 status: "open"
             });
             localStorage.setItem("tododata", JSON.stringify(this.todolist));
-            this.myFirebaseRef.push({id: this.todolist.length, name: inval, status: "open"});
         },
         clearall: function () {
             this.todolist = [];
@@ -119,10 +107,7 @@
         init: function () {
             //Initialize view and modal
             modal.init();
-            if(modal.getInitialStatus() === true)
-                view.init();
-            else
-                controller.init();
+            view.init();
         },
         getTodoList: function () {
             return modal.getTodoList();
