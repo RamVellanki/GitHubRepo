@@ -88,3 +88,8 @@ But how do we add behavior to this using Angular?
 In order to print the value we can just say {{tab}}
 So, when we click on Tab item, the {{tab}} expression gets evaluated automatically.
 So this kind of expressions are binded in two ways.
+
+---------------------------------------
+Level 3: Forms and Models:
+ng-model directive
+
