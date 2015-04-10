@@ -75,7 +75,7 @@ product.images[0] contains the image source.
 
 ng-hide based on if array has values or not:
  <div class="gallery" ng-show={{!product.images.length}}>
- 
+
 -------------------------------------
 Adding tabs:
 Twitter bootstrap comes with easy ways to add tabs:
@@ -88,3 +88,9 @@ But how do we add behavior to this using Angular?
 In order to print the value we can just say {{tab}}
 So, when we click on Tab item, the {{tab}} expression gets evaluated automatically.
 So this kind of expressions are binded in two ways.
+
+
+Level 3:
+--------------------------------------
+ng-model: this binds the form element value to the property.
+ng-model also works on check-box and radio buttons.
