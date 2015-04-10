@@ -89,8 +89,15 @@ In order to print the value we can just say {{tab}}
 So, when we click on Tab item, the {{tab}} expression gets evaluated automatically.
 So this kind of expressions are binded in two ways.
 
+<<<<<<< HEAD
 
 Level 3:
 --------------------------------------
 ng-model: this binds the form element value to the property.
 ng-model also works on check-box and radio buttons.
+=======
+---------------------------------------
+Level 3: Forms and Models:
+ng-model directive
+
+>>>>>>> origin/master
